@@ -1,0 +1,46 @@
+<agm-map class="animated infinite bounce delay-2s"
+[latitude]="lat"
+[longitude]="lng"
+[zoomControl]="zoomControl"
+[streetViewControl]="streetView"
+[zoom]="zoom">
+  <agm-marker-cluster
+    minimumClusterSize='5'
+    isOpen="1"
+    [imagePath]="'./assets/cluster/m'">
+    <div *ngFor="let d of ChargeDevices" >
+        <agm-marker
+          [iconUrl]="'assets/marker.png'"
+          [latitude]="parseString(d.ChargeDeviceLocation.Latitude)"
+          [longitude]="parseString(d.ChargeDeviceLocation.Longitude)"
+          (markerClick)="centerMap(d.ChargeDeviceLocation.Latitude, d.ChargeDeviceLocation.Longitude)">
+          <agm-snazzy-info-window
+          [closeWhenOthersOpen]="true"
+          [showCloseButton]="false"
+          maxWidth="500"
+          [backgroundColor]="'#2F3A3A'"
+          [border]="border" [padding]="'10px'"
+          borderRadius="25px">
+            <ng-template>
+            <div class="info-window">
+            <p>{{ d.ChargeDeviceName}}</p>
+            <p>24 Hour Access:
+              <i class="fas fa-check text-success" *ngIf="d.Accessible24Hours"></i>
+              <i class="fas fa-times text-danger" *ngIf="!d.Accessible24Hours"></i>
+            </p>
+            <p>{{formatAddress(d.ChargeDeviceLocation.Address)}}</p>
+            <p>Charger Types:
+              <span *ngFor="let t of d.Connector; let i = index; let last = last;">
+                {{t.ConnectorType}}
+                <span *ngIf="!last">,</span>
+              </span>
+             </p>
+            <a class="text-secondary" href="https://www.google.com/maps/dir/?api=1&destination={{d.ChargeDeviceLocation.Latitude}}, {{d.ChargeDeviceLocation.Longitude}}'">
+              Get Direction's ></a>
+          </div>
+            </ng-template>
+      </agm-snazzy-info-window>
+        </agm-marker>
+    </div>
+  </agm-marker-cluster>
+</agm-map>

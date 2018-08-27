@@ -1,0 +1,10 @@
+{
+  "/data": {
+  "target": "http://chargepoints.dft.gov.uk/api/retrieve/registry/format/json",
+  "secure": false,
+  "pathRewrite": {
+  "^/data": ""
+  },
+  "changeOrigin": true
+  }
+}

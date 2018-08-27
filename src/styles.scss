@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+$primary: #2F3A3A;
+$secondary: #FAEC00;
+$success: #00A137;
+
+@import "~snazzy-info-window/dist/snazzy-info-window.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+@import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+body {
+  background-color: #EEE;
+  font-family: 'Poiret One', cursive;
+  color: #FFF;
+  font-weight: bolder;
+}
+
+.sebm-google-map-container-inner > div > div > div:nth-child(3) {
+  width:200px;
+  height:50px;
+  box-sizing:border-box;
+  margin-bottom: -2.5px;
+  background: url('./assets/logo.png') no-repeat;
+  div {
+    display: none;
+  }
+}
