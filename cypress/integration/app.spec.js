@@ -1,4 +1,4 @@
-describe('Arnold Clark Code Challenge e2e Tests', () => {
+describe('UK Car Charging Map e2e Tests', () => {
   before(function() {
     cy.server();
     cy.route('data').as('getData');
@@ -7,7 +7,7 @@ describe('Arnold Clark Code Challenge e2e Tests', () => {
   });
 
   it('Application has the correct title!', () => {
-    cy.title().should('include', 'Arnold Clark Test');
+    cy.title().should('include', 'UK Car Charging Map');
   });
 
   it('Application has the correct h1 tag!', () => {

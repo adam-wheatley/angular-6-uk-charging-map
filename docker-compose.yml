@@ -6,8 +6,8 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    container_name: actest-adam
-    image: actest-adam
+    container_name: uk-charging-map
+    image: uk-charging-map
     networks:
       - prod-network
     ports:
