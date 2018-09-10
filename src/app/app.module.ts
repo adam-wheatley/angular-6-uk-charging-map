@@ -32,7 +32,7 @@ import { GeoLocationFormComponent } from './components/map/geo-location-form/geo
     FormsModule,
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyCoA-vRNOslBOxG9OySyjyigOo1IY6sdTQ'
+      apiKey: <INSERT-GOOGLE-MAP-API-KEY>
     }),
     AgmJsMarkerClustererModule,
     AgmSnazzyInfoWindowModule
