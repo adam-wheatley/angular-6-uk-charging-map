@@ -1,4 +1,4 @@
-# Arnold Clark Test - UK Car Charging Map
+# UK Car Charging Map - Angular 6
 
 ![alt text](/screenshot.png)
 
